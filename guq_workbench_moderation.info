@@ -1,0 +1,7 @@
+name = GU-Q Workbench Moderation
+description = Provides content moderation services customized for GU-Q
+package = Workbench
+core = 7.x
+
+dependencies[] = workbench
+dependencies[] = workbench_moderation
