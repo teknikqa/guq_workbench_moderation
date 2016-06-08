@@ -32,7 +32,7 @@ function guq_workbench_moderation_install() {
  * Enable Workbench Moderation Views
  * Implements hook_uninstall().
  */
-function workbench_moderation_uninstall() {
+function guq_workbench_moderation_uninstall() {
 
   // a list of views to disable
   $viewnames = array(
