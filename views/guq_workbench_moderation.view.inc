@@ -8,7 +8,7 @@
  */
 $view = new view();
 $view->name = 'guq_workbench_moderation';
-$view->description = 'Lists content by moderation state.';
+$view->description = 'Lists content by moderation state. Customized for GU-Q.';
 $view->tag = 'Workbench Moderation';
 $view->base_table = 'node_revision';
 $view->human_name = 'Workbench Moderation: Content';
