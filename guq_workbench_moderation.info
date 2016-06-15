@@ -3,5 +3,6 @@ description = Provides content moderation services customized for GU-Q
 package = Workbench
 core = 7.x
 
+dependencies[] = views
 dependencies[] = workbench
 dependencies[] = workbench_moderation
