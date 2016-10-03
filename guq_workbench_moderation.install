@@ -13,7 +13,6 @@ function guq_workbench_moderation_install() {
   // A list of views to disable.
   $viewnames = array(
     'workbench_moderation',
-    'workbench_recent_content',
   );
 
   // Grab list of views that are already disabled.
@@ -64,6 +63,34 @@ function guq_workbench_moderation_uninstall() {
   // Add our views to be enabled to the list.
   foreach ($viewnames as $key => $viewname) {
     $views_status[$viewname] = FALSE;
+  }
+
+  // Reset the variable with the new list.
+  variable_set('views_defaults', $views_status);
+
+  // Empty cache now.
+  if (function_exists('views_invalidate_cache')) {
+    views_invalidate_cache();
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enables the new view.
+ */
+function guq_workbench_moderation_update_7000() {
+  // Diable the Workbench Recent Content view.
+  $viewnames = array(
+    'workbench_recent_content',
+  );
+
+  // Grab list of views that are already disabled.
+  $views_status = variable_get('views_defaults', array());
+
+  // Add our views to be disabled to the list.
+  foreach ($viewnames as $key => $viewname) {
+    $views_status[$viewname] = TRUE;
   }
 
   // Reset the variable with the new list.
