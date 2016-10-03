@@ -1,11 +1,13 @@
 <?php
 
 /**
- * @file workbench_moderation.view.inc
+ * @file guq_workbench_moderation.view.inc
+ *
  * Default view. Provides two tabs on the Workbench, "My drafts" and "Needs
  * review", which list the moderation state for content relevant to the current
  * user.
  */
+
 $view = new view();
 $view->name = 'guq_workbench_moderation';
 $view->description = 'Lists content by moderation state. Customized for GU-Q.';

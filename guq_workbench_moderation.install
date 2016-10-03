@@ -1,47 +1,51 @@
 <?php
 
+/**
+ * @file guq_workbench_moderation.install
+ */
 
 /**
- * Disable Workbench Moderation Views
  * Implements hook_install().
+ *
+ * Disable Workbench Moderation Views.
  */
 function guq_workbench_moderation_install() {
-  // a list of views to disable
+  // A list of views to disable.
   $viewnames = array(
     'workbench_moderation',
     'workbench_recent_content',
   );
 
-  // grab list of views that are already disabled
+  // Grab list of views that are already disabled.
   $views_status = variable_get('views_defaults', array());
 
-  // add our views to be disabled to the list
+  // Add our views to be disabled to the list.
   foreach ($viewnames as $key => $viewname) {
     $views_status[$viewname] = TRUE;
   }
 
-  // reset the variable with the new list
+  // Reset the variable with the new list.
   variable_set('views_defaults', $views_status);
 
-  // empty cache now
+  // Empty cache now.
   if (function_exists('views_invalidate_cache')) {
     views_invalidate_cache();
   }
 }
 
 /**
- * Enable Workbench Moderation Views
  * Implements hook_uninstall().
+ *
+ * Enable Workbench Moderation Views.
  */
 function guq_workbench_moderation_uninstall() {
-
-  // a list of views to enable
+  // A list of views to enable.
   $viewnames = array(
     'workbench_moderation',
     'workbench_recent_content',
   );
 
-  // grab list of views that are already disabled
+  // Grab list of views that are already disabled.
   $views_status = variable_get('views_defaults', array());
 
   // Completely remove our view from the views_defaults list
@@ -57,15 +61,15 @@ function guq_workbench_moderation_uninstall() {
   }
   */
 
-  // add our views to be enabled to the list
+  // Add our views to be enabled to the list.
   foreach ($viewnames as $key => $viewname) {
     $views_status[$viewname] = FALSE;
   }
 
-  // reset the variable with the new list
+  // Reset the variable with the new list.
   variable_set('views_defaults', $views_status);
 
-  // empty cache now
+  // Empty cache now.
   if (function_exists('views_invalidate_cache')) {
     views_invalidate_cache();
   }
