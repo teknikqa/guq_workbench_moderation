@@ -34,7 +34,7 @@ function guq_workbench_moderation_install() {
  */
 function guq_workbench_moderation_uninstall() {
 
-  // a list of views to disable
+  // a list of views to enable
   $viewnames = array(
     'workbench_moderation',
   );
