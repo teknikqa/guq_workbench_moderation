@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Code for the guq_workbench_moderation feature.
+ */
+
+include_once 'guq_workbench_moderation.features.inc';
 
 /**
  * Implements hook_views_api().
