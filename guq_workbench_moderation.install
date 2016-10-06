@@ -109,5 +109,7 @@ function guq_workbench_moderation_update_7000() {
  */
 function guq_workbench_moderation_update_7001() {
   $cache = page_manager_get_page_cache('myworkbench');
-  page_manager_page_enable($cache, 'TRUE');
+  $function = ctools_plugin_get_function($cache->subtask, "enable callback");
+  $function($cache, FALSE);
+  menu_rebuild();
 }
