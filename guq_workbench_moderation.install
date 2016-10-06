@@ -109,9 +109,5 @@ function guq_workbench_moderation_update_7000() {
  */
 function guq_workbench_moderation_update_7001() {
   $cache = page_manager_get_page_cache('myworkbench');
-  $page = $cache->subtask['subtask'];
-  ctools_include('export');
-  ctools_export_set_object_status($page, TRUE);
-  $page->disabled = FALSE;
-  menu_rebuild();
+  page_manager_page_enable($cache, 'TRUE');
 }
