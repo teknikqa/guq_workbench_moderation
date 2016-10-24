@@ -251,6 +251,113 @@ $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
 $handler->display->display_options['defaults']['access'] = FALSE;
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['access']['perm'] = 'use workbench_moderation needs review tab';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+ 'nid' => 'nid',
+ 'log' => 'log',
+ 'workbench_moderation_history_link' => 'workbench_moderation_history_link',
+ 'state' => 'state',
+ 'moderation_actions' => 'moderation_actions',
+ 'title' => 'title',
+ 'type' => 'type',
+ 'field_title_et' => 'field_title_et',
+ 'timestamp' => 'timestamp',
+ 'gid' => 'gid',
+ 'language' => 'language',
+ 'menu_name' => 'log',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+ 'nid' => array(
+   'sortable' => 0,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'log' => array(
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'workbench_moderation_history_link' => array(
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'state' => array(
+   'sortable' => 1,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'moderation_actions' => array(
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'title' => array(
+   'sortable' => 1,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'type' => array(
+   'sortable' => 1,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'field_title_et' => array(
+   'sortable' => 0,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'timestamp' => array(
+   'sortable' => 0,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'gid' => array(
+   'sortable' => 0,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'language' => array(
+   'sortable' => 0,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+ 'menu_name' => array(
+   'sortable' => 0,
+   'default_sort_order' => 'asc',
+   'align' => '',
+   'separator' => '',
+   'empty_column' => 0,
+ ),
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['footer'] = FALSE;
+/* Footer: Global: Text area */
+$handler->display->display_options['footer']['area']['id'] = 'area';
+$handler->display->display_options['footer']['area']['table'] = 'views';
+$handler->display->display_options['footer']['area']['field'] = 'area';
+$handler->display->display_options['footer']['area']['content'] = '<p>Arabic content can only be published from the Arabic Workbench. <strong><a href="/ar/admin/workbench">Click here to go to the Arabic Workbench.</a></strong></p>';
+$handler->display->display_options['footer']['area']['format'] = 'raw_html';
 $handler->display->display_options['defaults']['empty'] = FALSE;
 /* No results behavior: Global: Text area */
 $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -258,6 +365,96 @@ $handler->display->display_options['empty']['area']['table'] = 'views';
 $handler->display->display_options['empty']['area']['field'] = 'area';
 $handler->display->display_options['empty']['area']['content'] = 'This list displays content in the "Needs review" state that you can moderate. Currently there is no such content.';
 $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+/* Field: Content revision: Log message */
+$handler->display->display_options['fields']['log']['id'] = 'log';
+$handler->display->display_options['fields']['log']['table'] = 'node_revision';
+$handler->display->display_options['fields']['log']['field'] = 'log';
+/* Field: Workbench Moderation: Moderation history link */
+$handler->display->display_options['fields']['workbench_moderation_history_link']['id'] = 'workbench_moderation_history_link';
+$handler->display->display_options['fields']['workbench_moderation_history_link']['table'] = 'node';
+$handler->display->display_options['fields']['workbench_moderation_history_link']['field'] = 'workbench_moderation_history_link';
+$handler->display->display_options['fields']['workbench_moderation_history_link']['relationship'] = 'nid';
+$handler->display->display_options['fields']['workbench_moderation_history_link']['exclude'] = TRUE;
+$handler->display->display_options['fields']['workbench_moderation_history_link']['hide_alter_empty'] = FALSE;
+/* Field: Moderation state */
+$handler->display->display_options['fields']['state']['id'] = 'state';
+$handler->display->display_options['fields']['state']['table'] = 'workbench_moderation_node_history';
+$handler->display->display_options['fields']['state']['field'] = 'state';
+$handler->display->display_options['fields']['state']['ui_name'] = 'Moderation state';
+$handler->display->display_options['fields']['state']['label'] = 'Moderation state';
+$handler->display->display_options['fields']['state']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['state']['alter']['text'] = '<div>[state]</div><div>[workbench_moderation_history_link]</div>';
+$handler->display->display_options['fields']['state']['hide_alter_empty'] = FALSE;
+$handler->display->display_options['fields']['state']['machine_name'] = 0;
+/* Field: Workbench Moderation: Moderation links */
+$handler->display->display_options['fields']['moderation_actions']['id'] = 'moderation_actions';
+$handler->display->display_options['fields']['moderation_actions']['table'] = 'workbench_moderation_node_history';
+$handler->display->display_options['fields']['moderation_actions']['field'] = 'moderation_actions';
+$handler->display->display_options['fields']['moderation_actions']['label'] = 'Set moderation state';
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['relationship'] = 'nid';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Type */
+$handler->display->display_options['fields']['type']['id'] = 'type';
+$handler->display->display_options['fields']['type']['table'] = 'node';
+$handler->display->display_options['fields']['type']['field'] = 'type';
+$handler->display->display_options['fields']['type']['relationship'] = 'nid';
+$handler->display->display_options['fields']['type']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['type']['alter']['ellipsis'] = FALSE;
+/* Field: Entity translation: Block Title: translated */
+$handler->display->display_options['fields']['field_title_et']['id'] = 'field_title_et';
+$handler->display->display_options['fields']['field_title_et']['table'] = 'field_data_field_title';
+$handler->display->display_options['fields']['field_title_et']['field'] = 'field_title_et';
+$handler->display->display_options['fields']['field_title_et']['relationship'] = 'uid';
+$handler->display->display_options['fields']['field_title_et']['label'] = 'Revised by';
+$handler->display->display_options['fields']['field_title_et']['settings'] = array(
+ 'linked_field' => array(
+   'linked' => 1,
+   'destination' => '',
+   'advanced' => array(
+     'title' => '',
+     'target' => '',
+     'class' => '',
+     'rel' => '',
+     'text' => '',
+   ),
+ ),
+);
+$handler->display->display_options['fields']['field_title_et']['language'] = 'en';
+/* Field: Content revision: Updated date */
+$handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+$handler->display->display_options['fields']['timestamp']['table'] = 'node_revision';
+$handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+$handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+$handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
+/* Field: Domain Access: Domain ID */
+$handler->display->display_options['fields']['gid']['id'] = 'gid';
+$handler->display->display_options['fields']['gid']['table'] = 'domain_access';
+$handler->display->display_options['fields']['gid']['field'] = 'gid';
+$handler->display->display_options['fields']['gid']['display_method'] = 'sitename';
+/* Field: Menu: Menu name */
+$handler->display->display_options['fields']['menu_name']['id'] = 'menu_name';
+$handler->display->display_options['fields']['menu_name']['table'] = 'menu_links';
+$handler->display->display_options['fields']['menu_name']['field'] = 'menu_name';
+$handler->display->display_options['fields']['menu_name']['relationship'] = 'nid';
+$handler->display->display_options['fields']['menu_name']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['menu_name']['empty'] = '<p>&nbsp;</p>
+<hr>
+<p>This content has not been added to a menu.</p>
+<p>If this is a <strong>\'Basic page\'</strong>, please check if this content needs to be added to a menu.</p>
+<p>Please ignore this message if this is any other content type.</p>';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Workbench Moderation: State */
