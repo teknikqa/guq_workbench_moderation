@@ -44,7 +44,7 @@ function guq_workbench_moderation_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = 'My Workbench Sample';
+  $display->title = 'GU-Q Workbench';
   $display->uuid = 'ed6f33f4-afcf-4126-b4b0-8dab0cf3902b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'myworkbench_panel_context_sample';
