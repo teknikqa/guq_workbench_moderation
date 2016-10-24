@@ -443,6 +443,7 @@ $handler->display->display_options['fields']['timestamp']['second_date_format'] 
 $handler->display->display_options['fields']['gid']['id'] = 'gid';
 $handler->display->display_options['fields']['gid']['table'] = 'domain_access';
 $handler->display->display_options['fields']['gid']['field'] = 'gid';
+$handler->display->display_options['fields']['gid']['label'] = 'Site';
 $handler->display->display_options['fields']['gid']['display_method'] = 'sitename';
 /* Field: Menu: Menu name */
 $handler->display->display_options['fields']['menu_name']['id'] = 'menu_name';
@@ -450,6 +451,7 @@ $handler->display->display_options['fields']['menu_name']['table'] = 'menu_links
 $handler->display->display_options['fields']['menu_name']['field'] = 'menu_name';
 $handler->display->display_options['fields']['menu_name']['relationship'] = 'nid';
 $handler->display->display_options['fields']['menu_name']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['menu_name']['alter']['text'] = '<p>&nbsp;</p>';
 $handler->display->display_options['fields']['menu_name']['empty'] = '<p>&nbsp;</p>
 <hr>
 <p>This content has not been added to a menu.</p>
